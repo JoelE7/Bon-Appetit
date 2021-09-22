@@ -30,7 +30,23 @@ public class ControladorProducto {
             List<Producto> listaProductos = this.servicioProductos.listarProductos();
             modelo.put("listaProductos", listaProductos);
         } catch (ListaNoEncontrada e) {
-            modelo.put("msgError","No hay productos");
+            modelo.put("msgError", "No hay productos");
+            return new ModelAndView("productos", modelo);
+        }
+        return new ModelAndView("productos", modelo);
+    }
+
+    @RequestMapping("productos-activos")
+    public ModelAndView listarProductosActivos() {
+
+        ModelMap modelo = new ModelMap();
+        modelo.remove("listaProductos");
+
+        try {
+            List<Producto> listaProductos = this.servicioProductos.listarProductosActivos();
+            modelo.put("listaProductos", listaProductos);
+        } catch (ListaNoEncontrada e) {
+            modelo.put("msgError", "No hay productos activos para mostrar");
             return new ModelAndView("productos", modelo);
         }
         return new ModelAndView("productos", modelo);
