@@ -28,7 +28,7 @@ public class ServicioProductoTest {
     List<Producto>listaDeProducto = new ArrayList<Producto>();
 
     @Test
-    public void queSeListenLosProductos() throws ListaNoEncontrada {
+    public void queSeListenTodosLosProductos() throws ListaNoEncontrada {
 
         givenUnaListaDeProductos();
 

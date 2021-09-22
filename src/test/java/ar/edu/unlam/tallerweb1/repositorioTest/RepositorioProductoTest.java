@@ -21,7 +21,7 @@ public class RepositorioProductoTest extends SpringTest {
     @Test
     @Rollback
     @Transactional
-    public void queSePuedanListarTodasLasProductos (){
+    public void queSePuedanListarTodosLasProductos(){
 
         List<Producto>productosEsperados = givenUnaListaDeProductos();
 

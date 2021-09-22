@@ -45,7 +45,7 @@ public class ControladorProducto {
         try {
             List<Producto> listaProductos = this.servicioProductos.listarProductosActivos();
             modelo.put("listaProductos", listaProductos);
-        } catch (ListaNoEncontrada e) {
+        } catch (ListaNoEncontrada excepcion) {
             modelo.put("msgError", "No hay productos activos para mostrar");
             return new ModelAndView("productos", modelo);
         }
